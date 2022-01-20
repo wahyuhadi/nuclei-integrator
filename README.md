@@ -13,7 +13,7 @@ nuclei -l target -silent -json | nuclei-integrator
 - Elastic (done)
 
 
-Push data to github issue
+Push data to ELK
 ---
 ![sc](/img/nuclei.png)
 
