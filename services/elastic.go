@@ -43,11 +43,9 @@ func pushdata(opts *models.Options, c *elasticsearch.Client) {
 	sc := bufio.NewScanner(os.Stdin)
 	var nuclei models.Nuclei
 	for sc.Scan() {
-		err := json.NewDecoder(os.Stdin).Decode(&nuclei)
-		if err != nil {
-			gologger.Info().Str("Error", fmt.Sprintf("%v", err.Error())).Msg("Error json decoder")
-			return
-		}
+		// err := json.NewDecoder(os.Stdin).Decode(&nuclei)
+		// fmt.Println(sc.Text())
+		json.Unmarshal([]byte(sc.Text()), &nuclei)
 
 		// parsing with esutil from elastic
 		data := esutil.NewJSONReader(&nuclei)
