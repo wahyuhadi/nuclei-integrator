@@ -42,7 +42,6 @@ func Elastic(opts *models.Options) {
 func pushdata(opts *models.Options, c *elasticsearch.Client) {
 	sc := bufio.NewScanner(os.Stdin)
 	var nuclei models.Nuclei
-
 	for sc.Scan() {
 		err := json.NewDecoder(os.Stdin).Decode(&nuclei)
 		if err != nil {
