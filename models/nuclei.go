@@ -23,6 +23,7 @@ type Nuclei struct {
 	Type             string   `json:"type"`
 	Host             string   `json:"host"`
 	MatchedAt        string   `json:"matched-at"`
+	CurlCommand      string   `json:"curl-command"`
 	ExtractedResults []string `json:"extracted-results"`
 	Meta             struct {
 		Hostname string `json:"Hostname"`

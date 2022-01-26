@@ -19,7 +19,6 @@ import (
 // Model data
 
 func Elastic(opts *models.Options) {
-
 	cfg := elasticsearch.Config{
 		Addresses: []string{opts.ElasticUrl},
 		Username:  opts.ElasticUser, // if ES need this
@@ -53,8 +52,7 @@ func pushdata(opts *models.Options, c *elasticsearch.Client) {
 		response, err := es.PushData(c, opts.ElasicIndex, data)
 		if err != nil {
 			gologger.Info().Str("Error", fmt.Sprintf("%v", err.Error())).Msg("Error push data")
-
 		}
-		gologger.Info().Str("Is Error ", fmt.Sprintf("%s", response.IsError())).Msg("Success Push data to elastic")
+		gologger.Info().Str("Is Success ", fmt.Sprintf("%v", response.IsError())).Msg("Success Push data to elastic")
 	}
 }

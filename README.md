@@ -17,3 +17,7 @@ Push data to ELK
 ---
 ![sc](/img/nuclei.png)
 
+
+Auto create issue jira
+---
+![sc](/img/jira.png)
