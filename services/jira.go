@@ -42,7 +42,8 @@ func createIssue(client *jira.Client) {
 		}
 		issue, _, err := client.Issue.Create(&i)
 		if err != nil {
-			fmt.Println(err)
+			gologger.Info().Str("Error", fmt.Sprintf("%v", err.Error())).Msg("Error create issue")
+			continue
 		}
 		gologger.Info().Str("Is Success ", fmt.Sprintf("%s", issue.Key)).Msg("Success create issue")
 
