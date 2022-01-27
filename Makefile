@@ -1,5 +1,4 @@
 test:
-	echo "Doing testing"
 	go test -v ./...
 
 build:
