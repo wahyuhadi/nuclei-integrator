@@ -28,6 +28,7 @@ func createIssue(client *jira.Client) {
 	var nuclei models.Nuclei
 	for sc.Scan() {
 		json.Unmarshal([]byte(sc.Text()), &nuclei)
+		nuclei.Info.Name = fmt.Sprintf("From Nuclei Bot : %s", nuclei.Info.Name)
 		i := jira.Issue{
 			Fields: &jira.IssueFields{
 				Description: createSummary(&nuclei),
